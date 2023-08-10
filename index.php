@@ -46,7 +46,7 @@
         }
 
         @keyframes fadeIn {
-            from { opacity: .5; }
+            from { opacity: 0; }
             to { opacity: 1; }
         }
 
@@ -79,12 +79,8 @@
             quoteContainer.innerText = xhr.responseText;
             quoteContainer.style.display = "block";
 
-            quoteContainer.style.fontFamily = fonts[counter];
+            quoteContainer.style.fontFamily = fonts[counter % fonts.length];
             counter++;
-
-            if(counter >= fonts.length){
-              
-            }
             
             quoteContainer.classList.add("fade-in");
 
